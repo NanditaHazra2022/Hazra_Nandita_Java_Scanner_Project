@@ -24,6 +24,14 @@ Apart from taking inputs from console , this code can read from file. For exampl
           long number = read.nextLong();
       }
 
+The scanner can also use delimiters other than whitespace.
+The next() and hasNext() methods and their primitive-type companion methods (such as nextInt() and hasNextInt()) first skip any input that matches the delimiter pattern, and then attempt to return the next token.
+The findInLine(java.lang.String), findWithinHorizon(java.lang.String, int), and skip(java.util.regex.Pattern) methods operate independently of the delimiter pattern. These methods will attempt to match the specified pattern with no regard to delimiters in the input and thus can be used in special circumstances where delimiters are not relevant.
+Depending upon the type of delimiting pattern, empty tokens may be returned. For example, the pattern "\\s+" will return no empty tokens since it matches multiple instances of the delimiter. The delimiting pattern "\\s" could return empty tokens since it only passes one space at a time.
+A scanner can read text from any object which implements the Readable interface. If an invocation of the underlying Readable interface method: read(java.nio.CharBuffer) method throws an IOException then the scanner assumes that the end of the input has been reached. The most recent IOException thrown by the underlying readable can be retrieved via the ioException() method.
+When a Scanner is closed using the method: close(), it will close its input source if the source implements the Closeable interface.
+A Scanner is not safe for multithreaded use without external synchronization.
+Unless otherwise mentioned, passing a null parameter into any method of a Scanner will cause a NullPointerException to be thrown.
 
 
 
