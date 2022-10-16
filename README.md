@@ -9,4 +9,22 @@ A Scanner breaks its input into tokens using a delimiter pattern, which by defau
 For example, this code allows a user to read a number from System.in:
      Scanner input = new Scanner(System.in);
      int num = input.nextInt();
+     
+Apart from taking inputs from console , this code can read from file. For example:
+      Scanner read 
+= new Scanner
+ (
+     new File
+     (
+          "C:\\myNumbers.txt"
+     )
+ );
+      while (read.hasNextLong()) 
+      {
+          long number = read.nextLong();
+      }
+
+
+
+
 
